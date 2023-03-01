@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>Register</h2>
+    <div class="form-container">
+        <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+       <Label>First Name</Label>
+            <div class="input-name">
+          <input type="text" placeholder="Enter the FirstName" formControlName="firstname">
+          <span style="color: red;" *ngIf="fname &&fname.invalid &&fname.touched">FirstName is required upto 50 character</span>
+        </div>
+        <Label>Lastname</Label>
+     <div class="input-name">
+        <input type="text" placeholder="Enter the  Lastname" formControlName="lastname">
+        <span style=" color:red" *ngIf="lname &&lname.invalid && lname.touched">LastName is required 50 character</span>
+     </div>
+     <Label> Email Address</Label>
+     <div class="input-name">
+        <input type="email" placeholder="Enter the Email"formControlName="email">
+        <span style="color: red;"*ngIf="email &&email.invalid && email.touched">Email is required</span>
+     </div>
+     <Label>Phone Number</Label>
+     <div class="input-name">
+        <input type="text" placeholder="Enter the Phone Number"   formControlName="phone">
+        <span  style="color: red;" *ngIf="phn &&phn.invalid && phn.touched">Phone Number is required</span>
+
+     </div>
+     <Label>Organization Name</Label>
+     <div class="input-name">
+        <input type="text" placeholder="Enter the Organization Name"  formControlName="organization">
+        <span  style="color: red;" *ngIf="orgname &&orgname.invalid && orgname.touched">Enter Organization Name</span>
+
+     </div>
+     <Label>Organization Address</Label>
+     <div class="input-name">
+        <input type="text" placeholder="Enter the  Organization Address"  formControlName="orgaddress">
+        <span  style="color: red;" *ngIf="org &&org.invalid && org.touched">Address is Required</span>
+     </div>
+     <div>
+      <label>Calender</label>
+      <input type="date"  formControlName="calender" formControlName="calender">
+      <Span  style="color: red;" *ngIf="cmd && cmd.invalid && cmd.touched">Date is required</Span>
+     </div>
+     <Label>Password</Label>
+     <div class="input-name">
+        <input type="password" placeholder="Enter the Password"  formControlName="password">
+        <span  style="color: red;" *ngIf="pasd && pasd.invalid && pasd.touched">Password is required</span>
+     </div>
+     <div class="b1"> <button class="btn btn-primary" (click)="resetForm()">Reset</button></div>
+
+     <div class="b2"> <button class="btn btn-success" [disabled]="contactForm.invalid" >Submit</button></div>
+
+        </form>
+
+    </div>
+</div>
+
